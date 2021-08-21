@@ -20,6 +20,7 @@ class Reload extends Command
         $this->setPermissionMessage(TextFormat::RED . "You do not have permission to use the command.");
         $this->setPermission('worldlimit.reload.use');
         $this->worldLimit = $worldLimit;
+        $this->setAliases(['rcw']);
     }
 
     public function execute(CommandSender $sender, string $commandLabel, array $args)
