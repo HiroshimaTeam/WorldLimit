@@ -3,6 +3,10 @@
 ***WorldLimit*** is a plugin that aims to create a limit in your Minecraft server
 
 
+## Command
+`/reload` permission : `worldlimit.reload.use` aliases `/rcw`
+
+
 ## Configuration
 
 ```YML
