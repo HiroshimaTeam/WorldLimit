@@ -102,7 +102,7 @@ trait WorldLimitTrait
     /**
      * @param WorldLimit $worldLimit
      */
-    public function reloadConfig(WorldLimit $worldLimit): void {
+    public function reloadConfigWorldLimite(WorldLimit $worldLimit): void {
         $this->checkConfig($worldLimit);
         $config = $worldLimit->getConfig()->getAll();
         $this->setX($worldLimit, $config['x']);
