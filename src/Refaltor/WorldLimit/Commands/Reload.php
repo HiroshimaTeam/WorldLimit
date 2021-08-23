@@ -29,6 +29,6 @@ class Reload extends Command
             return;
         }
 
-        $this->reloadConfig($this->worldLimit);
+        $this->reloadConfigWorldLimite($this->worldLimit);
     }
 }
