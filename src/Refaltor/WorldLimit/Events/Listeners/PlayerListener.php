@@ -25,15 +25,19 @@ class PlayerListener implements Listener
      */
     public function onMove(PlayerMoveEvent $playerMoveEvent): void {
         $player = $playerMoveEvent->getPlayer();
+        $to = $playerMoveEvent->getTo();
+        $from = $playerMoveEvent->getFrom();
 
         $x = $this->getX($this->worldLimit);
         $z = $this->getZ($this->worldLimit);
 
-        if ($player->getX() >= $x || $player->getZ() >= $z) {
-            if (in_array($player->getLevel()->getFolderName(), $this->getWorlds($this->worldLimit))) {
-                $playerMoveEvent->setCancelled(true);
-                $message = str_replace('{player}', $player->getName(), $this->getMessage($this->worldLimit));
-                $player->sendMessage($message);
+        if ($to->getX() !== $from->getX() or $from->getZ() !== $from->getZ()) {
+            if ($player->getX() >= $x || $player->getZ() >= $z) {
+                if (in_array($player->getLevel()->getFolderName(), $this->getWorlds($this->worldLimit))) {
+                    $playerMoveEvent->setCancelled(true);
+                    $message = str_replace('{player}', $player->getName(), $this->getMessage($this->worldLimit));
+                    $player->sendMessage($message);
+                }
             }
         }
     }
